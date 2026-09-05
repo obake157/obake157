@@ -67,7 +67,12 @@ A backend demonstration project using **Python, FastAPI, PostgreSQL, SQLAlchemy 
 
 ➡️ [View Python REST API Demo](./portfolio/python-rest-api-demo/)
 
-More public projects are being prepared around data migration and ERP integrations.
+### Data Migration Lab
+A migration-focused project demonstrating **ETL, validation, reconciliation, business rules and error reporting** with Python and SQL using fictional data.
+
+➡️ [View Data Migration Lab](./portfolio/data-migration-lab/)
+
+An ERP integration demo is the next public project planned for this portfolio.
 
 ## 🗄️ Database & Integration Experience
 
