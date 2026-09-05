@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RY Cube Trainer - learn 3x3 cube notation and useful algorithms with interactive flat and 3D cube views.">
+  <meta name="description" content="RY Cube Trainer - interactive 3x3 cube trainer with 3D view, auto solve and guided solving.">
   <title>RY Cube Trainer</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/cubejs@1.3.2/lib/cube.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/cubejs@1.3.2/lib/solve.min.js" defer></script>
   <script src="cube.js" defer></script>
   <script src="app.js" defer></script>
 </head>
@@ -54,19 +56,82 @@
           </div>
         </div>
 
+        <div class="solver-actions">
+          <button id="auto-solve-btn" class="button solve-button" type="button">✨ <span data-i18n="autoSolve">Solve automatically</span></button>
+          <button id="teach-btn" class="button secondary" type="button">🎓 <span data-i18n="teachMe">Teach me how to solve</span></button>
+          <button id="my-cube-btn" class="button ghost" type="button">🎨 <span data-i18n="myCube">Enter my cube</span></button>
+        </div>
+
         <div id="cube-view-3d" class="cube-view-3d">
-          <div class="cube-stage" id="cube-stage">
-            <div class="cube-3d" id="cube-3d">
-              <div id="face3d-F" class="cube-face cube-face-3d face3d-f" data-face="F"></div><div id="face3d-B" class="cube-face cube-face-3d face3d-b" data-face="B"></div><div id="face3d-R" class="cube-face cube-face-3d face3d-r" data-face="R"></div><div id="face3d-L" class="cube-face cube-face-3d face3d-l" data-face="L"></div><div id="face3d-U" class="cube-face cube-face-3d face3d-u" data-face="U"></div><div id="face3d-D" class="cube-face cube-face-3d face3d-d" data-face="D"></div>
+          <div class="cube-stage-wrap">
+            <button class="face-control face-control-u" data-direct-move="U" title="U">U</button>
+            <button class="face-control face-control-l" data-direct-move="L" title="L">L</button>
+            <div class="cube-stage" id="cube-stage">
+              <div class="cube-3d" id="cube-3d">
+                <div id="face3d-F" class="cube-face cube-face-3d face3d-f" data-face="F"></div>
+                <div id="face3d-B" class="cube-face cube-face-3d face3d-b" data-face="B"></div>
+                <div id="face3d-R" class="cube-face cube-face-3d face3d-r" data-face="R"></div>
+                <div id="face3d-L" class="cube-face cube-face-3d face3d-l" data-face="L"></div>
+                <div id="face3d-U" class="cube-face cube-face-3d face3d-u" data-face="U"></div>
+                <div id="face3d-D" class="cube-face cube-face-3d face3d-d" data-face="D"></div>
+              </div>
             </div>
+            <button class="face-control face-control-r" data-direct-move="R" title="R">R</button>
+            <button class="face-control face-control-f" data-direct-move="F" title="F">F</button>
+            <button class="face-control face-control-b" data-direct-move="B" title="B">B</button>
+            <button class="face-control face-control-d" data-direct-move="D" title="D">D</button>
           </div>
-          <p class="cube-hint" data-i18n="cubeHint">Drag the cube to rotate the view. Use the move buttons to turn its faces.</p>
+          <p class="cube-hint" data-i18n="cubeHint">Drag the cube to rotate the view. Use the side buttons or move controls to turn its faces.</p>
         </div>
 
         <div id="cube-view-flat" class="cube-view-flat" hidden>
           <div class="cube-net">
-            <div id="face-U" class="cube-face face-u" data-face="U"></div><div id="face-L" class="cube-face face-l" data-face="L"></div><div id="face-F" class="cube-face face-f" data-face="F"></div><div id="face-R" class="cube-face face-r" data-face="R"></div><div id="face-B" class="cube-face face-b" data-face="B"></div><div id="face-D" class="cube-face face-d" data-face="D"></div>
+            <div id="face-U" class="cube-face face-u" data-face="U"></div>
+            <div id="face-L" class="cube-face face-l" data-face="L"></div>
+            <div id="face-F" class="cube-face face-f" data-face="F"></div>
+            <div id="face-R" class="cube-face face-r" data-face="R"></div>
+            <div id="face-B" class="cube-face face-b" data-face="B"></div>
+            <div id="face-D" class="cube-face face-d" data-face="D"></div>
           </div>
+        </div>
+
+        <div id="my-cube-panel" class="my-cube-panel" hidden>
+          <div class="my-cube-head">
+            <div>
+              <p class="eyebrow" data-i18n="physicalCube">Your physical cube</p>
+              <h3 data-i18n="paintCube">Paint the open view to match your real cube</h3>
+              <p class="muted" data-i18n="paintHelp">Choose a color, then click the stickers. Centers are fixed. When finished, click Analyze.</p>
+            </div>
+            <button id="close-my-cube-btn" class="button ghost" type="button">×</button>
+          </div>
+          <div id="color-palette" class="color-palette"></div>
+          <div class="my-cube-actions">
+            <button id="clear-entry-btn" class="button ghost" type="button" data-i18n="resetColors">Reset colors</button>
+            <button id="analyze-cube-btn" class="button primary" type="button" data-i18n="analyzeCube">Analyze my cube</button>
+          </div>
+          <p id="entry-error" class="error-text"></p>
+        </div>
+
+        <div id="solution-panel" class="solution-panel" hidden>
+          <div class="solution-head">
+            <div>
+              <p class="eyebrow" data-i18n="solutionGuide">Solution guide</p>
+              <h3 id="solution-title">Solution ready</h3>
+            </div>
+            <span id="solution-progress" class="solution-progress"></span>
+          </div>
+          <div class="current-step">
+            <span data-i18n="nextMove">Next move</span>
+            <strong id="current-solution-move">—</strong>
+            <p id="move-explanation" class="muted"></p>
+          </div>
+          <div class="solution-controls">
+            <button id="prev-step-btn" class="button ghost" type="button" data-i18n="previous">Previous</button>
+            <button id="play-step-btn" class="button primary" type="button" data-i18n="doMove">Do this move</button>
+            <button id="next-step-btn" class="button secondary" type="button" data-i18n="next">Next</button>
+            <button id="play-all-btn" class="button solve-button" type="button" data-i18n="playAll">Solve all</button>
+          </div>
+          <div id="solution-sequence" class="solution-sequence"></div>
         </div>
 
         <div class="move-history"><span data-i18n="lastSequence">Last sequence</span><code id="history-output">—</code></div>
