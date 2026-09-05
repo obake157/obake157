@@ -1,27 +1,26 @@
 # Python REST API Demo
 
-A compact backend portfolio project demonstrating a REST API built with **Python, FastAPI, SQLAlchemy and PostgreSQL**.
+My earlier development work was mostly Delphi and SQL. In newer projects I have been using Python more often, so I built this small API to keep a public example of how I structure a backend today.
 
-## What this project demonstrates
+It is intentionally simple: customers, validation, persistence and a few endpoints. The point is not the size of the project; it is the separation between HTTP handling, validation, database access and configuration.
 
-- REST API design
-- CRUD operations
-- PostgreSQL integration
-- SQLAlchemy ORM
-- Pydantic validation
-- Environment-based configuration
-- Docker setup
-- Basic automated testing
-- Clean separation between API, models, schemas and database configuration
+## Stack
 
-## Main endpoints
+- Python
+- FastAPI
+- PostgreSQL
+- SQLAlchemy
+- Pydantic
+- Docker
 
-- `GET /health` — service health check
+## Endpoints
+
+- `GET /health` — basic health check
 - `GET /customers` — list customers
 - `POST /customers` — create a customer
-- `GET /customers/{id}` — retrieve a customer
+- `GET /customers/{id}` — retrieve one customer
 
-## Run with Docker
+## Run locally
 
 ```bash
 docker compose up --build
@@ -30,12 +29,12 @@ docker compose up --build
 Then open:
 
 - API: `http://localhost:8000`
-- Swagger docs: `http://localhost:8000/docs`
+- Swagger: `http://localhost:8000/docs`
 
-## Environment
+## Why this structure
 
-Copy `.env.example` to `.env` if you want to customize the database connection.
+Even in a small API, I prefer not to put database code, validation and request handling in the same place. Keeping those responsibilities separated makes it easier to test, change business rules and replace infrastructure later.
 
-## Portfolio note
+Configuration is kept outside the source code so connection strings and secrets do not need to be committed.
 
-This is a demonstration project using fictional data and generic business rules. It does not contain commercial source code or confidential information from previous employers or from RY ONE.
+This repository uses only fictional data and generic rules. It is not a copy of RY ONE or code from a previous employer.
