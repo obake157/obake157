@@ -37,7 +37,7 @@ The production source code is private because this is a commercial project.
 
 ## Public portfolio
 
-The projects below are intentionally small. Instead of publishing company or client code, I recreated common problems from my professional experience with synthetic data and simplified business rules.
+The projects below are intentionally small. Instead of publishing company or client code, I recreated common problems from my professional experience with synthetic data and simplified business rules. I also keep room for personal projects that come from things I genuinely enjoy outside work.
 
 | Project | What I wanted to show |
 | --- | --- |
@@ -45,6 +45,7 @@ The projects below are intentionally small. Instead of publishing company or cli
 | [Python REST API Demo](./portfolio/python-rest-api-demo/) | A small Python backend with PostgreSQL, validation and a clear API structure |
 | [Data Migration Lab](./portfolio/data-migration-lab/) | The validation and reconciliation work that makes an ERP migration trustworthy |
 | [ERP Integration Demo](./portfolio/erp-integration-demo/) | Mapping, validation, authentication, retries and error handling in system integrations |
+| [Cube Trainer](./portfolio/cube-trainer/) | A hobby project for learning 3x3 cube notation and useful algorithms with an interactive cube state |
 
 All public examples use fictional or synthetic data. They do not contain source code, credentials or data from employers, customers or RY ONE.
 
