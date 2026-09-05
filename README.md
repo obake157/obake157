@@ -55,6 +55,15 @@ Main areas include:
 
 > The commercial source code of RY ONE is private.
 
+## 🧪 Public Portfolio Projects
+
+### SQL Server Toolkit
+A public demonstration project focused on **SQL Server, T-SQL, stored procedures, views, data validation, auditing and troubleshooting** using fictional data.
+
+➡️ [View SQL Server Toolkit](./portfolio/sql-server-toolkit/)
+
+More public projects are being prepared around Python REST APIs, data migration and ERP integrations.
+
 ## 🗄️ Database & Integration Experience
 
 Strong professional experience with:
