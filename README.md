@@ -72,7 +72,10 @@ A migration-focused project demonstrating **ETL, validation, reconciliation, bus
 
 ➡️ [View Data Migration Lab](./portfolio/data-migration-lab/)
 
-An ERP integration demo is the next public project planned for this portfolio.
+### ERP Integration Demo
+A systems-integration project demonstrating **REST APIs, JSON mapping, bearer authentication, retries, error handling and ERP-style synchronization** using fictional data.
+
+➡️ [View ERP Integration Demo](./portfolio/erp-integration-demo/)
 
 ## 🗄️ Database & Integration Experience
 
