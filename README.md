@@ -62,7 +62,12 @@ A public demonstration project focused on **SQL Server, T-SQL, stored procedures
 
 ➡️ [View SQL Server Toolkit](./portfolio/sql-server-toolkit/)
 
-More public projects are being prepared around Python REST APIs, data migration and ERP integrations.
+### Python REST API Demo
+A backend demonstration project using **Python, FastAPI, PostgreSQL, SQLAlchemy and Docker**, with CRUD endpoints, validation and API documentation.
+
+➡️ [View Python REST API Demo](./portfolio/python-rest-api-demo/)
+
+More public projects are being prepared around data migration and ERP integrations.
 
 ## 🗄️ Database & Integration Experience
 
