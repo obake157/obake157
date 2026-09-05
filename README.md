@@ -1,66 +1,54 @@
-# Hi, I'm Takero Yanase 👋
+# Takero Yanase
 
-**Systems Analyst & Software Developer** with 15+ years of experience in software development, databases, ERP systems, systems integration, implementation, data migration and technical support.
+Systems Analyst and Software Developer from Goiânia, Brazil.
 
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)](https://www.microsoft.com/sql-server/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
-[![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
-![Delphi](https://img.shields.io/badge/Delphi-E62431?style=for-the-badge&logoColor=white)
-![REST APIs](https://img.shields.io/badge/REST%20APIs-02569B?style=for-the-badge&logoColor=white)
+I have worked with ERP systems since 2011. Most of my career has been around **Delphi, SQL Server, databases, integrations, data migration and business-critical systems**. In recent projects I have also been working with **Python, PostgreSQL, Docker and REST APIs**.
 
-## 💼 Professional Background
+I enjoy the part of software development that sits between code and the business: understanding a process, finding where the data is wrong, defining the rule, integrating systems and making the result reliable for the people who use it every day.
 
-- Systems Analysis and Software Development
-- ERP implementation, support and evolution
-- SQL and relational databases
-- Data migration, validation and reconciliation
-- Systems integration and REST APIs
-- Requirements analysis and business rules
-- Technical support and troubleshooting
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+![Delphi](https://img.shields.io/badge/Delphi-E62431?style=flat-square)
 
-## 🛠️ Core Skills
+## What I work with
 
-**Languages:** Python · Delphi · Java · JavaScript · SQL  
-**Databases:** SQL Server · PostgreSQL · Firebird · MySQL · Paradox  
-**Tools & Technologies:** REST APIs · FastAPI · Docker · Git · HTML5 · CSS3 · Systems Integration
+- SQL, stored procedures, data validation and troubleshooting
+- ERP development, implementation and support
+- Data migration and reconciliation between systems
+- REST API integrations and business-rule mapping
+- Requirements analysis and process understanding
+- Python backend development and PostgreSQL
+- Docker and Git in current projects
 
-## 🚀 Current Project — RY ONE ERP
+I have worked with environments involving **TOTVS RM, Senior, Sankhya and Benner**, in addition to proprietary ERP systems.
 
-I am currently developing **RY ONE**, a SaaS ERP platform designed to support business management processes.
+## Current project: RY ONE
 
-Main areas include **CRM, Sales, Financial Management, Scheduling, Customers, Reports & Indicators, Integrations and REST APIs**.
+I am currently developing **RY ONE**, a SaaS ERP platform that I started from the application and database structure through business rules, integrations and deployment.
 
-🌐 **Website:** https://one.rytecnologia.com.br/
+The platform includes areas such as scheduling, CRM, customers, sales, financial management, reports, indicators and integrations.
 
-> The commercial source code of RY ONE is private.
+Website: https://one.rytecnologia.com.br/
 
-## 🧪 Public Portfolio Projects
+The production source code is private because this is a commercial project.
 
-| Project | Demonstrates |
+## Public portfolio
+
+The projects below are intentionally small. Instead of publishing company or client code, I recreated common problems from my professional experience with synthetic data and simplified business rules.
+
+| Project | What I wanted to show |
 | --- | --- |
-| [**SQL Server Toolkit**](./portfolio/sql-server-toolkit/) | T-SQL, stored procedures, views, data validation, auditing and troubleshooting |
-| [**Python REST API Demo**](./portfolio/python-rest-api-demo/) | Python, FastAPI, PostgreSQL, SQLAlchemy, Docker, CRUD and API documentation |
-| [**Data Migration Lab**](./portfolio/data-migration-lab/) | ETL, validation, reconciliation, business rules and error reporting |
-| [**ERP Integration Demo**](./portfolio/erp-integration-demo/) | REST APIs, JSON mapping, bearer authentication, retries and ERP-style synchronization |
+| [SQL Server Toolkit](./portfolio/sql-server-toolkit/) | How I use SQL to find inconsistent data before changing anything in the business system |
+| [Python REST API Demo](./portfolio/python-rest-api-demo/) | A small Python backend with PostgreSQL, validation and a clear API structure |
+| [Data Migration Lab](./portfolio/data-migration-lab/) | The validation and reconciliation work that makes an ERP migration trustworthy |
+| [ERP Integration Demo](./portfolio/erp-integration-demo/) | Mapping, validation, authentication, retries and error handling in system integrations |
 
-_All examples use fictional or synthetic data. Commercial source code and confidential company code are intentionally kept private._
+All public examples use fictional or synthetic data. They do not contain source code, credentials or data from employers, customers or RY ONE.
 
-## 🗄️ Database & Integration Experience
+## Contact
 
-Strong professional experience with **SQL queries, stored procedures, data validation, data migration, ERP integrations, data consistency analysis, troubleshooting and business rules**.
-
-Corporate systems experience:
-
-**TOTVS RM | Senior | Sankhya | Benner**
-
-## 📍 Location
-
-Goiânia, Goiás, Brazil 🇧🇷
-
-## 📫 Contact
-
-💼 **LinkedIn:** https://linkedin.com/in/takero-yanase  
-🌐 **RY ONE:** https://one.rytecnologia.com.br/
+LinkedIn: https://linkedin.com/in/takero-yanase  
+RY ONE: https://one.rytecnologia.com.br/
