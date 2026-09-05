@@ -1,45 +1,39 @@
 # SQL Server Toolkit
 
-A small public portfolio project with practical SQL Server examples focused on data validation, auditing, reporting, stored procedures and data-quality checks.
+This project is a small collection of SQL Server examples based on a type of problem I dealt with repeatedly in ERP environments: **finding inconsistent data before it turns into an operational problem**.
 
-All tables and records in this project are fictional and were created only for demonstration purposes.
+In previous work, SQL was often my first tool for checking whether records made sense before payroll, reporting or other critical routines. The goal was not to edit production tables directly. The goal was to identify the problem, understand the rule that was being broken and then correct the record through the application when possible.
 
-## What this project demonstrates
+Everything in this repository is fictional. The schema and sample data were created only to reproduce that workflow safely.
 
-- Relational data modeling
-- SQL queries and JOINs
-- Data-quality validation
-- Auditing and reconciliation
-- Views for operational reporting
-- Stored procedures for reusable checks
-- Safe troubleshooting practices without direct production-data correction
+## Scenario
 
-## Business scenario
+The sample database contains employees, departments and employment-status information. The validation scripts look for cases such as:
 
-The sample database represents a fictional company with employees, departments and employment status records.
-
-The validation routines identify situations such as:
-
-- Active employees assigned to inactive departments
-- Terminated employees still marked as active
-- Employees on vacation with inconsistent status
-- Missing department assignments
-- Duplicate employee identifiers
-
-The approach reflects a key principle used in enterprise environments: **SQL is used to identify and validate inconsistencies, while business corrections should be performed through the application whenever possible to preserve auditability and business rules.**
+- active employees linked to inactive departments;
+- terminated employees still marked as active;
+- vacation records with inconsistent status;
+- employees without a valid department;
+- duplicated employee identifiers.
 
 ## Files
 
-- `schema.sql` — sample database structure
-- `sample_data.sql` — fictional test data
-- `validation_queries.sql` — data-quality and audit queries
-- `views.sql` — reusable reporting views
-- `stored_procedures.sql` — stored procedures for validation routines
+- `schema.sql` — sample tables and relationships
+- `sample_data.sql` — intentionally mixed valid and invalid records
+- `validation_queries.sql` — checks used to locate data inconsistencies
+- `views.sql` — reusable views for operational analysis
+- `stored_procedures.sql` — examples of reusable validation routines
 
-## Skills demonstrated
+## What matters to me in this example
 
-`SQL Server` `T-SQL` `Stored Procedures` `Views` `Data Validation` `Data Quality` `Troubleshooting` `ERP` `Business Rules`
+A query that returns rows is not enough. For each validation, I try to make the result useful to someone who has to investigate the problem: identify the record, show the conflicting information and make the business rule understandable.
+
+That is also why this example separates **diagnosis** from **correction**. In a real ERP, bypassing the application to fix data directly in the database can skip validations, audit trails and other rules.
+
+## Technologies
+
+SQL Server · T-SQL · Stored Procedures · Views · Data Validation · Data Quality
 
 ---
 
-Created as part of my public technical portfolio.
+Synthetic portfolio example. No employer or client code is included.
