@@ -1,29 +1,20 @@
 # ERP Integration Demo
 
-A public portfolio project demonstrating a simplified **ERP-to-external-service integration** using Python and REST APIs.
+A REST integration is rarely difficult because of the HTTP request itself. In ERP work, most of the effort is usually in field mapping, required data, authentication, retries, logs and understanding what should happen when one side accepts a record and the other side does not.
+
+This project is a small public example of that workflow using fictional employee data and a fake external service.
 
 ## Scenario
 
-An ERP needs to synchronize employee records with an external workforce platform. The integration must:
+An ERP needs to synchronize employee records with an external workforce platform. Before sending anything, the integration has to:
 
-- map internal ERP fields to an API payload;
-- validate required data before sending;
-- authenticate using a bearer token;
-- handle timeouts and transient HTTP errors;
-- retry safe requests;
-- log the synchronization result;
-- avoid exposing secrets in source code.
-
-## Skills demonstrated
-
-- REST API integration
-- JSON payload mapping
-- Authentication
-- Error handling
-- Retry strategy
-- Environment variables
-- ERP integration concepts
-- Data validation
+- map internal ERP fields to the external payload;
+- validate required values;
+- authenticate with a bearer token;
+- handle timeouts and temporary HTTP failures;
+- retry only when it is safe to do so;
+- record the result of each synchronization attempt;
+- keep secrets outside the source code.
 
 ## Run
 
@@ -34,8 +25,16 @@ export API_TOKEN=demo-token
 python src/sync.py
 ```
 
-The default URL is intentionally non-functional. This project is designed to demonstrate integration structure without connecting to a real service.
+The default URL is intentionally invalid. The code is meant to show the integration structure without calling a real service.
 
-## Important
+## Design choices
 
-All data, endpoints and business rules are fictional. This project contains no proprietary source code, credentials or confidential information.
+I keep mapping and validation explicit because integrations become difficult to maintain when business rules are hidden inside request code. I also prefer errors to preserve enough context to answer basic support questions: which record failed, what was sent, what the remote service returned and whether a retry makes sense.
+
+Secrets are read from environment variables rather than committed to the repository.
+
+## Technologies and concepts
+
+Python · REST APIs · JSON · Authentication · Retry Handling · Data Validation · ERP Integration
+
+All endpoints, records and rules are fictional. No credentials, customer data or proprietary integration code are included.
