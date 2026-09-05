@@ -6,6 +6,8 @@ I have worked with ERP systems since 2011. Most of my career has been around **D
 
 I enjoy the part of software development that sits between code and the business: understanding a process, finding where the data is wrong, defining the rule, integrating systems and making the result reliable for the people who use it every day.
 
+[🌐 Open my portfolio](https://obake157.github.io/obake157/portfolio/) · [💼 LinkedIn](https://linkedin.com/in/takero-yanase) · [🚀 RY ONE](https://one.rytecnologia.com.br/)
+
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
@@ -31,7 +33,7 @@ I am currently developing **RY ONE**, a SaaS ERP platform that I started from th
 
 The platform includes areas such as scheduling, CRM, customers, sales, financial management, reports, indicators and integrations.
 
-Website: https://one.rytecnologia.com.br/
+**Website:** https://one.rytecnologia.com.br/
 
 The production source code is private because this is a commercial project.
 
@@ -39,17 +41,28 @@ The production source code is private because this is a commercial project.
 
 The projects below are intentionally small. Instead of publishing company or client code, I recreated common problems from my professional experience with synthetic data and simplified business rules. I also keep room for personal projects that come from things I genuinely enjoy outside work.
 
-| Project | What I wanted to show |
-| --- | --- |
-| [SQL Server Toolkit](./portfolio/sql-server-toolkit/) | How I use SQL to find inconsistent data before changing anything in the business system |
-| [Python REST API Demo](./portfolio/python-rest-api-demo/) | A small Python backend with PostgreSQL, validation and a clear API structure |
-| [Data Migration Lab](./portfolio/data-migration-lab/) | The validation and reconciliation work that makes an ERP migration trustworthy |
-| [ERP Integration Demo](./portfolio/erp-integration-demo/) | Mapping, validation, authentication, retries and error handling in system integrations |
-| [RY Cube Trainer](./portfolio/ry-cube-trainer/) | A hobby project for learning 3x3 cube notation and useful algorithms with an interactive cube state |
+| Project | Description | Open project | Source code |
+| --- | --- | --- | --- |
+| **RY Cube Trainer** | Interactive 3x3 cube trainer with 3D view, manual moves and guided solving | [▶ Live demo](https://obake157.github.io/obake157/portfolio/ry-cube-trainer/) | [</> Source](./portfolio/ry-cube-trainer/) |
+| **SQL Server Toolkit** | SQL examples for finding inconsistent data before changing business-critical systems | [📖 View project](./portfolio/sql-server-toolkit/README.md) | [</> Source](./portfolio/sql-server-toolkit/) |
+| **Python REST API Demo** | Small Python backend with PostgreSQL, validation and a clear API structure | [📖 View project](./portfolio/python-rest-api-demo/README.md) | [</> Source](./portfolio/python-rest-api-demo/) |
+| **Data Migration Lab** | Validation and reconciliation work that makes an ERP migration trustworthy | [📖 View project](./portfolio/data-migration-lab/README.md) | [</> Source](./portfolio/data-migration-lab/) |
+| **ERP Integration Demo** | Mapping, validation, authentication, retries and error handling in system integrations | [📖 View project](./portfolio/erp-integration-demo/README.md) | [</> Source](./portfolio/erp-integration-demo/) |
+
+### Featured live project
+
+**RY Cube Trainer** is available directly in the browser — no installation required:
+
+👉 https://obake157.github.io/obake157/portfolio/ry-cube-trainer/
+
+Full portfolio page:
+
+👉 https://obake157.github.io/obake157/portfolio/
 
 All public examples use fictional or synthetic data. They do not contain source code, credentials or data from employers, customers or RY ONE.
 
 ## Contact
 
 LinkedIn: https://linkedin.com/in/takero-yanase  
+Portfolio: https://obake157.github.io/obake157/portfolio/  
 RY ONE: https://one.rytecnologia.com.br/
