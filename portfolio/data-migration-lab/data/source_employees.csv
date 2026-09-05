@@ -1,0 +1,6 @@
+employee_id,name,email,department,status
+1001,Ana Silva,ana.silva@example.com,Finance,ACTIVE
+1002,Bruno Costa,bruno.costa@example.com,Human Resources,ON_LEAVE
+1003,Carla Souza,carla.souza@example.com,IT,ACTIVE
+1004,Diego Lima,,Operations,ACTIVE
+1005,Elisa Martins,ana.silva@example.com,Finance,TERMINATED
