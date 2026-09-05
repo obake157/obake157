@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RY Cube Trainer - learn 3x3 cube notation and useful algorithms with an interactive cube state.">
+  <title>RY Cube Trainer</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="cube.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap hero">
+      <div>
+        <p class="eyebrow">Personal project · 3x3 cube</p>
+        <h1>RY Cube Trainer</h1>
+        <p class="lead">Learn the notation, run useful algorithms and watch the cube state change move by move.</p>
+      </div>
+      <div class="status-card" aria-live="polite">
+        <span class="status-label">Cube status</span>
+        <strong id="cube-status">Solved</strong>
+        <span id="learned-count">0 algorithms learned</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="trainer-grid" aria-labelledby="trainer-title">
+      <div class="panel cube-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Interactive trainer</p>
+            <h2 id="trainer-title">Try the moves</h2>
+          </div>
+          <div class="toolbar">
+            <button id="scramble-btn" class="button secondary" type="button">Scramble</button>
+            <button id="reset-btn" class="button ghost" type="button">Reset</button>
+          </div>
+        </div>
+
+        <div class="cube-net" aria-label="Interactive 3x3 cube net">
+          <div id="face-U" class="cube-face face-u" data-face="U"></div>
+          <div id="face-L" class="cube-face face-l" data-face="L"></div>
+          <div id="face-F" class="cube-face face-f" data-face="F"></div>
+          <div id="face-R" class="cube-face face-r" data-face="R"></div>
+          <div id="face-B" class="cube-face face-b" data-face="B"></div>
+          <div id="face-D" class="cube-face face-d" data-face="D"></div>
+        </div>
+
+        <div class="move-history">
+          <span>Last sequence</span>
+          <code id="history-output">—</code>
+        </div>
+      </div>
+
+      <aside class="panel controls-panel">
+        <p class="eyebrow">Face turns</p>
+        <h2>Quick moves</h2>
+        <p class="muted">A prime mark means the inverse direction. Use the keyboard too: R, L, U, D, F or B. Hold Shift for the prime move.</p>
+
+        <div id="move-buttons" class="move-buttons" aria-label="Cube move buttons"></div>
+
+        <form id="algorithm-form" class="algorithm-form">
+          <label for="algorithm-input">Run a sequence</label>
+          <div class="input-row">
+            <input id="algorithm-input" type="text" autocomplete="off" spellcheck="false" placeholder="R U R' U'" aria-describedby="input-help">
+            <button class="button primary" type="submit">Run</button>
+          </div>
+          <small id="input-help">Accepted moves: R L U D F B with optional ' or 2.</small>
+          <p id="input-error" class="error-text" role="alert"></p>
+        </form>
+      </aside>
+    </section>
+
+    <section class="section-block" aria-labelledby="notation-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Start here</p>
+          <h2 id="notation-title">Notation that is worth memorizing</h2>
+        </div>
+      </div>
+
+      <div class="notation-grid">
+        <article class="notation-card"><strong>R</strong><span>Right face</span></article>
+        <article class="notation-card"><strong>L</strong><span>Left face</span></article>
+        <article class="notation-card"><strong>U</strong><span>Upper face</span></article>
+        <article class="notation-card"><strong>D</strong><span>Down face</span></article>
+        <article class="notation-card"><strong>F</strong><span>Front face</span></article>
+        <article class="notation-card"><strong>B</strong><span>Back face</span></article>
+        <article class="notation-card"><strong>R'</strong><span>Inverse turn</span></article>
+        <article class="notation-card"><strong>U2</strong><span>Half turn</span></article>
+      </div>
+
+      <p class="note">Clockwise is always defined while you are looking directly at the face you are turning.</p>
+    </section>
+
+    <section class="section-block" aria-labelledby="algorithms-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Useful building blocks</p>
+          <h2 id="algorithms-title">Algorithms to practice</h2>
+        </div>
+        <button id="practice-btn" class="button secondary" type="button">Random practice</button>
+      </div>
+
+      <div id="practice-box" class="practice-box" hidden>
+        <span>Practice</span>
+        <strong id="practice-name"></strong>
+        <code id="practice-sequence" class="blurred"></code>
+        <div class="practice-actions">
+          <button id="reveal-btn" class="button ghost" type="button">Reveal</button>
+          <button id="play-practice-btn" class="button primary" type="button">Play it</button>
+        </div>
+      </div>
+
+      <div id="algorithm-list" class="algorithm-list"></div>
+    </section>
+
+    <section class="section-block" aria-labelledby="roadmap-title">
+      <p class="eyebrow">Beginner roadmap</p>
+      <h2 id="roadmap-title">A sensible order to learn</h2>
+      <ol class="roadmap">
+        <li><strong>White cross</strong><span>Learn to match each edge with its side center instead of only making a white plus.</span></li>
+        <li><strong>First-layer corners</strong><span>Get comfortable with short triggers such as R U R' U'.</span></li>
+        <li><strong>Middle layer</strong><span>Practice inserting an edge to the right and to the left.</span></li>
+        <li><strong>Yellow cross</strong><span>Recognize the dot, L and line cases before running the algorithm.</span></li>
+        <li><strong>Orient the yellow face</strong><span>Sune is a useful pattern to recognize early.</span></li>
+        <li><strong>Last-layer positioning</strong><span>Learn permutation cases gradually instead of trying to memorize everything at once.</span></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Built by Takero Yanase as a hobby project for a public technical portfolio.</p>
+    </div>
+  </footer>
+</body>
+</html>
