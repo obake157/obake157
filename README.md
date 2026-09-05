@@ -1,16 +1,82 @@
-## Hi there 👋
+# Hi, I'm Takero Yanase 👋
 
-<!--
-**obake157/obake157** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Systems Analyst and Software Developer with 15+ years of experience in software development, databases, ERP systems, integrations, system implementation and technical support.
 
-Here are some ideas to get you started:
+## 💼 Professional Background
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- Systems Analysis and Software Development
+- ERP implementation and support
+- SQL and relational databases
+- Data migration and validation
+- Systems integration
+- Requirements analysis and business rules
+- Technical support and troubleshooting
+
+## 🛠️ Technologies
+
+**Languages**
+- Python
+- Delphi
+- Java
+- JavaScript
+- SQL
+
+**Databases**
+- SQL Server
+- PostgreSQL
+- Firebird
+- MySQL
+- Paradox
+
+**Tools & Technologies**
+- REST APIs
+- Docker
+- Git
+- HTML5
+- CSS3
+- Systems Integration
+
+## 🚀 Current Project — RY ONE ERP
+
+I am currently developing **RY ONE**, a SaaS ERP platform designed to support business management processes.
+
+Main areas include:
+
+- CRM
+- Sales
+- Financial Management
+- Scheduling
+- Customers
+- Reports and Indicators
+- Integrations
+- REST APIs
+
+🌐 **Website:** https://one.rytecnologia.com.br/
+
+> The commercial source code of RY ONE is private.
+
+## 🗄️ Database & Integration Experience
+
+Strong professional experience with:
+
+- SQL queries
+- Stored Procedures
+- Data validation
+- Data migration
+- ERP integrations
+- Data consistency analysis
+- Troubleshooting
+- Business rules
+
+Experience working with corporate systems such as:
+
+**TOTVS RM | Senior | Sankhya | Benner**
+
+## 📍 Location
+
+Goiânia, Goiás, Brazil 🇧🇷
+
+## 📫 Contact
+
+💼 LinkedIn: https://linkedin.com/in/takero-yanase  
+🌐 RY ONE: https://one.rytecnologia.com.br/
