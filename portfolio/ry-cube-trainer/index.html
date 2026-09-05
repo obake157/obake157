@@ -11,14 +11,25 @@
 </head>
 <body>
   <header class="site-header">
+    <div class="wrap language-row">
+      <label class="language-picker" for="language-select">
+        <span data-i18n="language">Language</span>
+        <select id="language-select" aria-label="Language">
+          <option value="pt-BR">Português BR</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="ja">日本語</option>
+        </select>
+      </label>
+    </div>
     <div class="wrap hero">
       <div>
-        <p class="eyebrow">Personal project · 3x3 cube</p>
+        <p class="eyebrow" data-i18n="projectLabel">Personal project · 3x3 cube</p>
         <h1>RY Cube Trainer</h1>
-        <p class="lead">Learn the notation, run useful algorithms and watch the cube state change move by move.</p>
+        <p class="lead" data-i18n="lead">Learn the notation, run useful algorithms and watch the cube state change move by move.</p>
       </div>
       <div class="status-card" aria-live="polite">
-        <span class="status-label">Cube status</span>
+        <span class="status-label" data-i18n="cubeStatusLabel">Cube status</span>
         <strong id="cube-status">Solved</strong>
         <span id="learned-count">0 algorithms learned</span>
       </div>
@@ -30,131 +41,78 @@
       <div class="panel cube-panel">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Interactive trainer</p>
-            <h2 id="trainer-title">Try the moves</h2>
+            <p class="eyebrow" data-i18n="interactiveTrainer">Interactive trainer</p>
+            <h2 id="trainer-title" data-i18n="tryMoves">Try the moves</h2>
           </div>
           <div class="toolbar">
             <div class="view-switch" aria-label="Cube view">
-              <button id="view-3d-btn" class="button view-button is-selected" type="button">3D cube</button>
-              <button id="view-flat-btn" class="button view-button" type="button">Open view</button>
+              <button id="view-3d-btn" class="button view-button is-selected" type="button" data-i18n="cube3d">3D cube</button>
+              <button id="view-flat-btn" class="button view-button" type="button" data-i18n="openView">Open view</button>
             </div>
-            <button id="scramble-btn" class="button secondary" type="button">Scramble</button>
-            <button id="reset-btn" class="button ghost" type="button">Reset</button>
+            <button id="scramble-btn" class="button secondary" type="button" data-i18n="scramble">Scramble</button>
+            <button id="reset-btn" class="button ghost" type="button" data-i18n="reset">Reset</button>
           </div>
         </div>
 
-        <div id="cube-view-3d" class="cube-view-3d" aria-label="Interactive 3D cube. Drag to rotate the view.">
+        <div id="cube-view-3d" class="cube-view-3d">
           <div class="cube-stage" id="cube-stage">
             <div class="cube-3d" id="cube-3d">
-              <div id="face3d-F" class="cube-face cube-face-3d face3d-f" data-face="F"></div>
-              <div id="face3d-B" class="cube-face cube-face-3d face3d-b" data-face="B"></div>
-              <div id="face3d-R" class="cube-face cube-face-3d face3d-r" data-face="R"></div>
-              <div id="face3d-L" class="cube-face cube-face-3d face3d-l" data-face="L"></div>
-              <div id="face3d-U" class="cube-face cube-face-3d face3d-u" data-face="U"></div>
-              <div id="face3d-D" class="cube-face cube-face-3d face3d-d" data-face="D"></div>
+              <div id="face3d-F" class="cube-face cube-face-3d face3d-f" data-face="F"></div><div id="face3d-B" class="cube-face cube-face-3d face3d-b" data-face="B"></div><div id="face3d-R" class="cube-face cube-face-3d face3d-r" data-face="R"></div><div id="face3d-L" class="cube-face cube-face-3d face3d-l" data-face="L"></div><div id="face3d-U" class="cube-face cube-face-3d face3d-u" data-face="U"></div><div id="face3d-D" class="cube-face cube-face-3d face3d-d" data-face="D"></div>
             </div>
           </div>
-          <p class="cube-hint">Drag the cube to rotate the view. Use the move buttons to turn its faces.</p>
+          <p class="cube-hint" data-i18n="cubeHint">Drag the cube to rotate the view. Use the move buttons to turn its faces.</p>
         </div>
 
         <div id="cube-view-flat" class="cube-view-flat" hidden>
-          <div class="cube-net" aria-label="Open 3x3 cube net">
-            <div id="face-U" class="cube-face face-u" data-face="U"></div>
-            <div id="face-L" class="cube-face face-l" data-face="L"></div>
-            <div id="face-F" class="cube-face face-f" data-face="F"></div>
-            <div id="face-R" class="cube-face face-r" data-face="R"></div>
-            <div id="face-B" class="cube-face face-b" data-face="B"></div>
-            <div id="face-D" class="cube-face face-d" data-face="D"></div>
+          <div class="cube-net">
+            <div id="face-U" class="cube-face face-u" data-face="U"></div><div id="face-L" class="cube-face face-l" data-face="L"></div><div id="face-F" class="cube-face face-f" data-face="F"></div><div id="face-R" class="cube-face face-r" data-face="R"></div><div id="face-B" class="cube-face face-b" data-face="B"></div><div id="face-D" class="cube-face face-d" data-face="D"></div>
           </div>
         </div>
 
-        <div class="move-history">
-          <span>Last sequence</span>
-          <code id="history-output">—</code>
-        </div>
+        <div class="move-history"><span data-i18n="lastSequence">Last sequence</span><code id="history-output">—</code></div>
       </div>
 
       <aside class="panel controls-panel">
-        <p class="eyebrow">Face turns</p>
-        <h2>Quick moves</h2>
-        <p class="muted">A prime mark means the inverse direction. Use the keyboard too: R, L, U, D, F or B. Hold Shift for the prime move.</p>
-
-        <div id="move-buttons" class="move-buttons" aria-label="Cube move buttons"></div>
-
+        <p class="eyebrow" data-i18n="faceTurns">Face turns</p>
+        <h2 data-i18n="quickMoves">Quick moves</h2>
+        <p class="muted" data-i18n="quickHelp">A prime mark means the inverse direction. Use the keyboard too: R, L, U, D, F or B. Hold Shift for the prime move.</p>
+        <div id="move-buttons" class="move-buttons"></div>
         <form id="algorithm-form" class="algorithm-form">
-          <label for="algorithm-input">Run a sequence</label>
-          <div class="input-row">
-            <input id="algorithm-input" type="text" autocomplete="off" spellcheck="false" placeholder="R U R' U'" aria-describedby="input-help">
-            <button class="button primary" type="submit">Run</button>
-          </div>
-          <small id="input-help">Accepted moves: R L U D F B with optional ' or 2.</small>
+          <label for="algorithm-input" data-i18n="runSequence">Run a sequence</label>
+          <div class="input-row"><input id="algorithm-input" type="text" autocomplete="off" spellcheck="false" placeholder="R U R' U'" aria-describedby="input-help"><button class="button primary" type="submit" data-i18n="run">Run</button></div>
+          <small id="input-help" data-i18n="acceptedMoves">Accepted moves: R L U D F B with optional ' or 2.</small>
           <p id="input-error" class="error-text" role="alert"></p>
         </form>
       </aside>
     </section>
 
-    <section class="section-block" aria-labelledby="notation-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Start here</p>
-          <h2 id="notation-title">Notation that is worth memorizing</h2>
-        </div>
-      </div>
-
+    <section class="section-block">
+      <div class="section-heading"><div><p class="eyebrow" data-i18n="startHere">Start here</p><h2 data-i18n="notationTitle">Notation that is worth memorizing</h2></div></div>
       <div class="notation-grid">
-        <article class="notation-card"><strong>R</strong><span>Right face</span></article>
-        <article class="notation-card"><strong>L</strong><span>Left face</span></article>
-        <article class="notation-card"><strong>U</strong><span>Upper face</span></article>
-        <article class="notation-card"><strong>D</strong><span>Down face</span></article>
-        <article class="notation-card"><strong>F</strong><span>Front face</span></article>
-        <article class="notation-card"><strong>B</strong><span>Back face</span></article>
-        <article class="notation-card"><strong>R'</strong><span>Inverse turn</span></article>
-        <article class="notation-card"><strong>U2</strong><span>Half turn</span></article>
+        <article class="notation-card"><strong>R</strong><span data-i18n="rightFace">Right face</span></article><article class="notation-card"><strong>L</strong><span data-i18n="leftFace">Left face</span></article><article class="notation-card"><strong>U</strong><span data-i18n="upperFace">Upper face</span></article><article class="notation-card"><strong>D</strong><span data-i18n="downFace">Down face</span></article><article class="notation-card"><strong>F</strong><span data-i18n="frontFace">Front face</span></article><article class="notation-card"><strong>B</strong><span data-i18n="backFace">Back face</span></article><article class="notation-card"><strong>R'</strong><span data-i18n="inverseTurn">Inverse turn</span></article><article class="notation-card"><strong>U2</strong><span data-i18n="halfTurn">Half turn</span></article>
       </div>
-
-      <p class="note">Clockwise is always defined while you are looking directly at the face you are turning.</p>
+      <p class="note" data-i18n="clockwiseNote">Clockwise is always defined while you are looking directly at the face you are turning.</p>
     </section>
 
-    <section class="section-block" aria-labelledby="algorithms-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Useful building blocks</p>
-          <h2 id="algorithms-title">Algorithms to practice</h2>
-        </div>
-        <button id="practice-btn" class="button secondary" type="button">Random practice</button>
-      </div>
-
-      <div id="practice-box" class="practice-box" hidden>
-        <span>Practice</span>
-        <strong id="practice-name"></strong>
-        <code id="practice-sequence" class="blurred"></code>
-        <div class="practice-actions">
-          <button id="reveal-btn" class="button ghost" type="button">Reveal</button>
-          <button id="play-practice-btn" class="button primary" type="button">Play it</button>
-        </div>
-      </div>
-
+    <section class="section-block">
+      <div class="section-heading"><div><p class="eyebrow" data-i18n="buildingBlocks">Useful building blocks</p><h2 data-i18n="algorithmsTitle">Algorithms to practice</h2></div><button id="practice-btn" class="button secondary" type="button" data-i18n="randomPractice">Random practice</button></div>
+      <div id="practice-box" class="practice-box" hidden><span data-i18n="practice">Practice</span><strong id="practice-name"></strong><code id="practice-sequence" class="blurred"></code><div class="practice-actions"><button id="reveal-btn" class="button ghost" type="button" data-i18n="reveal">Reveal</button><button id="play-practice-btn" class="button primary" type="button" data-i18n="playIt">Play it</button></div></div>
       <div id="algorithm-list" class="algorithm-list"></div>
     </section>
 
-    <section class="section-block" aria-labelledby="roadmap-title">
-      <p class="eyebrow">Beginner roadmap</p>
-      <h2 id="roadmap-title">A sensible order to learn</h2>
+    <section class="section-block">
+      <p class="eyebrow" data-i18n="beginnerRoadmap">Beginner roadmap</p><h2 data-i18n="roadmapTitle">A sensible order to learn</h2>
       <ol class="roadmap">
-        <li><strong>White cross</strong><span>Learn to match each edge with its side center instead of only making a white plus.</span></li>
-        <li><strong>First-layer corners</strong><span>Get comfortable with short triggers such as R U R' U'.</span></li>
-        <li><strong>Middle layer</strong><span>Practice inserting an edge to the right and to the left.</span></li>
-        <li><strong>Yellow cross</strong><span>Recognize the dot, L and line cases before running the algorithm.</span></li>
-        <li><strong>Orient the yellow face</strong><span>Sune is a useful pattern to recognize early.</span></li>
-        <li><strong>Last-layer positioning</strong><span>Learn permutation cases gradually instead of trying to memorize everything at once.</span></li>
+        <li><strong data-i18n="whiteCross">White cross</strong><span data-i18n="whiteCrossDesc">Learn to match each edge with its side center instead of only making a white plus.</span></li>
+        <li><strong data-i18n="firstCorners">First-layer corners</strong><span data-i18n="firstCornersDesc">Get comfortable with short triggers such as R U R' U'.</span></li>
+        <li><strong data-i18n="middleLayer">Middle layer</strong><span data-i18n="middleLayerDesc">Practice inserting an edge to the right and to the left.</span></li>
+        <li><strong data-i18n="yellowCross">Yellow cross</strong><span data-i18n="yellowCrossDesc">Recognize the dot, L and line cases before running the algorithm.</span></li>
+        <li><strong data-i18n="orientYellow">Orient the yellow face</strong><span data-i18n="orientYellowDesc">Sune is a useful pattern to recognize early.</span></li>
+        <li><strong data-i18n="lastPositioning">Last-layer positioning</strong><span data-i18n="lastPositioningDesc">Learn permutation cases gradually instead of trying to memorize everything at once.</span></li>
       </ol>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <p>Built by Takero Yanase as a hobby project for a public technical portfolio.</p>
-    </div>
-  </footer>
+  <footer class="site-footer"><div class="wrap"><p data-i18n="footer">Built by Takero Yanase as a hobby project for a public technical portfolio.</p></div></footer>
 </body>
 </html>
