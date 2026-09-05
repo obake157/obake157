@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RY Cube Trainer - learn 3x3 cube notation and useful algorithms with an interactive cube state.">
+  <meta name="description" content="RY Cube Trainer - learn 3x3 cube notation and useful algorithms with interactive flat and 3D cube views.">
   <title>RY Cube Trainer</title>
   <link rel="stylesheet" href="styles.css">
   <script src="cube.js" defer></script>
@@ -34,18 +34,38 @@
             <h2 id="trainer-title">Try the moves</h2>
           </div>
           <div class="toolbar">
+            <div class="view-switch" aria-label="Cube view">
+              <button id="view-3d-btn" class="button view-button is-selected" type="button">3D cube</button>
+              <button id="view-flat-btn" class="button view-button" type="button">Open view</button>
+            </div>
             <button id="scramble-btn" class="button secondary" type="button">Scramble</button>
             <button id="reset-btn" class="button ghost" type="button">Reset</button>
           </div>
         </div>
 
-        <div class="cube-net" aria-label="Interactive 3x3 cube net">
-          <div id="face-U" class="cube-face face-u" data-face="U"></div>
-          <div id="face-L" class="cube-face face-l" data-face="L"></div>
-          <div id="face-F" class="cube-face face-f" data-face="F"></div>
-          <div id="face-R" class="cube-face face-r" data-face="R"></div>
-          <div id="face-B" class="cube-face face-b" data-face="B"></div>
-          <div id="face-D" class="cube-face face-d" data-face="D"></div>
+        <div id="cube-view-3d" class="cube-view-3d" aria-label="Interactive 3D cube. Drag to rotate the view.">
+          <div class="cube-stage" id="cube-stage">
+            <div class="cube-3d" id="cube-3d">
+              <div id="face3d-F" class="cube-face cube-face-3d face3d-f" data-face="F"></div>
+              <div id="face3d-B" class="cube-face cube-face-3d face3d-b" data-face="B"></div>
+              <div id="face3d-R" class="cube-face cube-face-3d face3d-r" data-face="R"></div>
+              <div id="face3d-L" class="cube-face cube-face-3d face3d-l" data-face="L"></div>
+              <div id="face3d-U" class="cube-face cube-face-3d face3d-u" data-face="U"></div>
+              <div id="face3d-D" class="cube-face cube-face-3d face3d-d" data-face="D"></div>
+            </div>
+          </div>
+          <p class="cube-hint">Drag the cube to rotate the view. Use the move buttons to turn its faces.</p>
+        </div>
+
+        <div id="cube-view-flat" class="cube-view-flat" hidden>
+          <div class="cube-net" aria-label="Open 3x3 cube net">
+            <div id="face-U" class="cube-face face-u" data-face="U"></div>
+            <div id="face-L" class="cube-face face-l" data-face="L"></div>
+            <div id="face-F" class="cube-face face-f" data-face="F"></div>
+            <div id="face-R" class="cube-face face-r" data-face="R"></div>
+            <div id="face-B" class="cube-face face-b" data-face="B"></div>
+            <div id="face-D" class="cube-face face-d" data-face="D"></div>
+          </div>
         </div>
 
         <div class="move-history">
