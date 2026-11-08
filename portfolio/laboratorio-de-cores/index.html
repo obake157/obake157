@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Misture duas ou três cores, controle as proporções e descubra o nome da nova cor em português, inglês e espanhol.">
+  <meta name="theme-color" content="#fff8ed">
+  <title>Laboratório de Cores</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Laboratório de Cores">
+      <span class="brand-mark"><i></i><i></i><i></i></span>
+      <span data-i18n="brand">Laboratório de Cores</span>
+    </a>
+    <label class="language-label">
+      <span data-i18n="language">Idioma</span>
+      <select id="language" aria-label="Idioma">
+        <option value="pt">Português</option><option value="en">English</option><option value="es">Español</option>
+      </select>
+    </label>
+  </header>
+
+  <main>
+    <div class="progress-wrap" aria-label="Progresso">
+      <div class="progress-line"><span id="progressLine"></span></div>
+      <ol class="progress">
+        <li class="active"><b>1</b><span data-i18n="stepProfile">Perfil</span></li>
+        <li><b>2</b><span data-i18n="stepColors">Cores</span></li>
+        <li><b>3</b><span data-i18n="stepResult">Resultado</span></li>
+      </ol>
+    </div>
+
+    <section class="screen active" id="profileScreen">
+      <div class="intro">
+        <span class="kicker" data-i18n="welcome">BEM-VINDO AO EXPERIMENTO</span>
+        <h1 data-i18n="whoAreYou">Quem está criando hoje?</h1>
+        <p data-i18n="profileHint">Escolha uma opção para começar sua experiência com as cores.</p>
+      </div>
+      <div class="profile-grid">
+        <button class="profile-card" data-profile="boy">
+          <span class="avatar boy-avatar" aria-hidden="true">
+            <svg viewBox="0 0 220 220" role="img"><circle cx="110" cy="110" r="104" fill="#d9f2ee"/><path d="M51 218c7-46 31-67 59-67s52 21 59 67" fill="#24877d"/><circle cx="110" cy="101" r="57" fill="#efb486"/><path d="M54 91c1-49 28-69 61-69 32 0 55 21 57 56-20-4-34-13-47-29-15 25-38 36-71 42z" fill="#263238"/><circle cx="89" cy="103" r="5"/><circle cx="132" cy="103" r="5"/><path d="M94 127c10 8 22 8 32 0" fill="none" stroke="#9d594d" stroke-width="5" stroke-linecap="round"/></svg>
+          </span>
+          <strong data-i18n="boy">Menino</strong><small data-i18n="boyDesc">Criador curioso</small><i class="check">✓</i>
+        </button>
+        <button class="profile-card" data-profile="girl">
+          <span class="avatar girl-avatar" aria-hidden="true">
+            <svg viewBox="0 0 220 220" role="img"><circle cx="110" cy="110" r="104" fill="#f7e1ec"/><path d="M47 218c8-45 34-67 63-67s55 22 63 67" fill="#b84c83"/><path d="M49 105c0-58 25-86 62-86s65 29 65 87l-22 51H65z" fill="#53372f"/><circle cx="110" cy="101" r="57" fill="#eab086"/><path d="M56 86c7-47 30-65 58-65 33 0 55 25 59 64-25-6-43-19-55-39-12 21-31 35-62 40z" fill="#53372f"/><circle cx="89" cy="103" r="5"/><circle cx="132" cy="103" r="5"/><path d="M94 127c10 8 22 8 32 0" fill="none" stroke="#9d594d" stroke-width="5" stroke-linecap="round"/></svg>
+          </span>
+          <strong data-i18n="girl">Menina</strong><small data-i18n="girlDesc">Criadora curiosa</small><i class="check">✓</i>
+        </button>
+        <button class="profile-card anonymous" data-profile="anonymous">
+          <span class="anonymous-icon" aria-hidden="true">?</span>
+          <strong data-i18n="anonymous">Anônimo</strong><small data-i18n="anonymousDesc">Prefiro não informar</small><i class="check">✓</i>
+        </button>
+      </div>
+      <button class="primary next-profile" id="profileNext" disabled><span data-i18n="continue">Continuar</span><span>→</span></button>
+    </section>
+
+    <section class="screen" id="mixScreen">
+      <div class="mix-heading">
+        <div><span class="kicker" data-i18n="yourRecipe">SUA RECEITA</span><h1 data-i18n="createColor">Crie uma cor inédita</h1><p data-i18n="mixHint">Escolha 2 ou 3 cores e ajuste a participação de cada uma.</p></div>
+        <div class="count-control"><span data-i18n="howMany">Quantas cores?</span><div><button class="count active" data-count="2">2</button><button class="count" data-count="3">3</button></div></div>
+      </div>
+      <div class="lab-layout">
+        <div class="ingredients" id="ingredients"></div>
+        <aside class="preview-card">
+          <span class="preview-label" data-i18n="livePreview">PRÉVIA DA MISTURA</span>
+          <div class="flask" aria-hidden="true"><div class="flask-neck"></div><div class="flask-body"><div class="liquid" id="previewLiquid"></div><span class="shine"></span></div></div>
+          <strong id="previewHex">#808080</strong>
+          <p data-i18n="previewHint">A cor muda enquanto você ajusta a receita.</p>
+        </aside>
+      </div>
+      <div class="mix-actions"><button class="ghost" id="backProfile">← <span data-i18n="back">Voltar</span></button><button class="primary" id="mixButton"><span data-i18n="mixButton">Unificar cores</span><span class="spark">✦</span></button></div>
+    </section>
+
+    <section class="screen" id="resultScreen">
+      <div class="result-card">
+        <div class="confetti" aria-hidden="true"></div>
+        <span class="kicker" data-i18n="born">UMA NOVA COR NASCEU</span>
+        <h1 data-i18n="meetColor">Conheça sua nova cor</h1>
+        <div class="result-swatch" id="resultSwatch"><span></span></div>
+        <div class="color-name"><span data-i18n="closestName">NOME MAIS PRÓXIMO</span><h2 id="namePt">—</h2></div>
+        <div class="translations"><div><span>English</span><strong id="nameEn">—</strong></div><div><span>Español</span><strong id="nameEs">—</strong></div></div>
+        <div class="codes"><button id="copyHex"><span>HEX</span><strong id="resultHex">—</strong><i>⧉</i></button><div><span>RGB</span><strong id="resultRgb">—</strong></div></div>
+        <p class="copy-message" id="copyMessage" aria-live="polite"></p>
+        <div class="result-actions"><button class="primary" id="newMix"><span data-i18n="newMix">Criar outra mistura</span> ↻</button><button class="ghost" id="share"><span data-i18n="share">Compartilhar cor</span> ↗</button></div>
+      </div>
+    </section>
+  </main>
+  <footer><span data-i18n="footer">Feito para quem gosta de descobrir novas cores.</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
