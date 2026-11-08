@@ -43,7 +43,7 @@ The projects below are intentionally small. Instead of publishing company or cli
 
 | Project | Description | Open project | Source code |
 | --- | --- | --- | --- |
-| **Laboratório de Cores** | Interactive color mixer with weighted proportions and Portuguese, English and Spanish color names | [▶ Live demo](https://obake157.github.io/obake157/portfolio/laboratorio-de-cores/) | [</> Source](./portfolio/laboratorio-de-cores/) |
+| **RY - Corers** | Interactive color mixer with weighted proportions and Portuguese, English and Spanish color names | [▶ Live demo](https://obake157.github.io/obake157/portfolio/laboratorio-de-cores/) | [</> Source](./portfolio/laboratorio-de-cores/) |
 | **RY Cube Trainer** | Interactive 3x3 cube trainer with 3D view, manual moves and guided solving | [▶ Live demo](https://obake157.github.io/obake157/portfolio/ry-cube-trainer/) | [</> Source](./portfolio/ry-cube-trainer/) |
 | **SQL Server Toolkit** | SQL examples for finding inconsistent data before changing business-critical systems | [📖 View project](./portfolio/sql-server-toolkit/README.md) | [</> Source](./portfolio/sql-server-toolkit/) |
 | **Python REST API Demo** | Small Python backend with PostgreSQL, validation and a clear API structure | [📖 View project](./portfolio/python-rest-api-demo/README.md) | [</> Source](./portfolio/python-rest-api-demo/) |
